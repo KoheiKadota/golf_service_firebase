@@ -35,6 +35,37 @@ a {
  -webkit-text-stroke: 0.4px #06179b;
 }
 
+.login_button
+{
+  position: absolute;
+  top: 10%;
+  left: 85%;
+  display: inline-block;
+  cursor: pointer;
+  padding: 8px 60px;
+  background-color: #19d608;
+  box-shadow: 0px 5px #ffffff;
+  border-radius: 14px;
+  font-family: Arial Black;
+  color: #fdfdfd;
+  font-size: 20px;
+}
+
+.new_member_button {
+  position: absolute;
+  top: 10%;
+  left: 70%;
+  display: inline-block;
+  cursor: pointer;
+  padding: 8px 60px;
+  background-color: #c808d6;
+  box-shadow: 0px 5px #ffffff;
+  border-radius: 14px;
+  font-family: Arial Black;
+  color: #fdfdfd;
+  font-size: 20px;
+}
+
 
 
 /* 文字がふわっと */

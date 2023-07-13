@@ -6,10 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" type="text/css" href="style.css" />
+
     <title>G O L F   P A R T Y</title>
   </head>
 
-  <!-- /* タイトル -->
+  <!-- /* メニュー -->
   <body>
 
     <nav>
@@ -23,10 +24,82 @@
     </nav>
 
 
+    <!-- LOGINボタン -->
+    <div class="login_button">
+      <div id="login" >LOGIN</div>
+    </div>
+    <!--/LOGINボタン -->
+
+
+    <!-- 新規会員登録ボタン -->
+    <div class="new_member_button">
+      <div id="new">NEW</div>
+    </div>
+    <!--/新規会員登録ボタン -->
+
+
+
     <div id="index.html">
       <p class="title">G O L F &nbsp;  P A R T Y</p>
 
       <div class="bg" style ="background-image:url(img/title.jpg);"></div>
+
+
+<!-- JQuery -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script><!--/JQuery -->
+<script type="module">
+  //###############################################
+  // Firebaseライブラリを読み込み
+  //###############################################
+  import { initializeApp }
+    from "https://www.gstatic.com/firebasejs/10.0.0/firebase-app.js";
+  import { getAuth, signInWithPopup, GoogleAuthProvider, signOut, onAuthStateChanged }
+    from "https://www.gstatic.com/firebasejs/10.0.0/firebase-auth.js";
+
+
+  //###############################################
+  //FirebaseConfig [ KEYを取得して設定！！ ]
+  //###############################################
+  const firebaseConfig = {
+    apiKey: "AIzaSyC_E90q6j2ify5lKe1EIygZPeJ70N_5u9s",
+    authDomain: "golfparty-a5c8a.firebaseapp.com",
+    projectId: "golfparty-a5c8a",
+    storageBucket: "golfparty-a5c8a.appspot.com",
+    messagingSenderId: "898976679685",
+    appId: "1:898976679685:web:67cb026bd48128e786d96c"
+  };
+  const app = initializeApp(firebaseConfig);
+
+
+  //###############################################
+  //GoogleAuth(認証用)
+  //###############################################
+  const provider = new GoogleAuthProvider();
+  provider.addScope('https://www.googleapis.com/auth/contacts.readonly');
+  const auth = getAuth();
+
+  //###############################################
+  //Login処理
+  //###############################################
+  $("#login").on("click", function () {
+    //Google認証完了後の処理
+    signInWithPopup(auth, provider).then((result) => {
+      //Login後のページ遷移
+      location.href = "memo_app.html";  //遷移先 次のページ
+    }).catch((error) => {
+      // Handle Errors here.
+      const errorCode = error.code;
+      const errorMessage = error.message;
+      // The email of the user's account used.
+      const email = error.email;
+      // The AuthCredential type that was used.
+      const credential = GoogleAuthProvider.credentialFromError(error);
+      // ...
+    });
+  });
+
+</script>
+
 
 
         <!-- /* ボタン(btn)をクリックすると次のページへ遷移 -->
@@ -34,9 +107,18 @@
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
         <script>
-          $("#btn1").click(function () {
-            window.location.href = "index.html";
-          });
+
+          // $("#btn99").click(function () {
+          //   window.location.href = "new_member.html";
+          // });
+
+          // $("#btn0").click(function () {
+          //   window.location.href = "login.html";
+          // });
+
+          // $("#btn1").click(function () {
+          //   window.location.href = "index.html";
+          // });
 
           $("#btn2").click(function () {
             window.location.href = "about.html";
@@ -56,5 +138,10 @@
           
       </script>
     </div>
+
+
+
+
   </body>
+
 </html>

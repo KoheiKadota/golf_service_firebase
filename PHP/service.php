@@ -36,7 +36,7 @@
 
   <div class="container">
   <!-- PHP  formにはaction, method, nameを設定！ -->
-      <form action="todo_txt_create.php" method="POST">
+      <form action="todo_create.php" method="POST">
 
     <title>プロフィール登録</title>
 
@@ -58,8 +58,8 @@
         <input type="text" id="name" name="name" required>
   
        <!-- ④名前かな -->
-        <label for="nameKana">ふりがな</label>
-        <input type="text" id="nameKana" name="nameKana" required>
+        <label for="name_kana">ふりがな</label>
+        <input type="text" id="name_kana" name="name_kana" required>
  
        <!-- ⑤性別 -->
         <label for="gender">性別</label>
@@ -82,18 +82,18 @@
         <input type="email" id="email" name="email" required>
 
         <!-- ⑧平均スコア -->    
-        <label for="aveScore">平均スコア</label>
-        <select id="aveScore" name="aveScore" required>
+        <label for="ave_score">平均スコア</label>
+        <select id="ave_score" name="ave_score" required>
           <option value="">選択してください</option>
-          <option value="70代">70代</option>
-          <option value="80代">80代</option>
-          <option value="90代">90代</option>
-          <option value="100代">100代</option>
+          <option value="70">70代</option>
+          <option value="80">80代</option>
+          <option value="90">90代</option>
+          <option value="100">100代</option>
         </select>
 
         <!-- ⑨ベストスコア -->    
-        <label for="bestScore">ベストスコア</label>
-        <input type="number" id="bestScore" name="bestScore" required>
+        <label for="best_score">ベストスコア</label>
+        <input type="number" id="best_score" name="best_score" required>
   
         <!-- ⑩ゴルフ歴 -->  
         <label for="career">ゴルフ歴</label>
@@ -109,8 +109,8 @@
   
 
         <!-- 12 フリーフォーマット-->  
-        <label for="freeFormat">フリーフォーマット</label>
-        <textarea id="freeFormat" name="freeFormat" rows="5" style="width: 100%;"></textarea>
+        <label for="free">フリーフォーマット</label>
+        <textarea id="free" name="free" rows="5" style="width: 100%;"></textarea>
   
         <input type="submit" value="送信">
  </form>

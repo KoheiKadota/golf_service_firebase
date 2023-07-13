@@ -1,22 +1,25 @@
 <?php
+include('functions.php');
+$pdo = connect_to_db();
 
 // DB接続
 
-$dbn ='mysql:dbname=golf_service;charset=utf8mb4;port=3306;host=localhost';
-$user = 'root';
-$pwd = '';
+// $dbn ='mysql:dbname=golf_service;charset=utf8mb4;port=3306;host=localhost';
+// $user = 'root';
+// $pwd = '';
 
-try {
-  $pdo = new PDO($dbn, $user, $pwd);
-} catch (PDOException $e) {
-  echo json_encode(["db error" => "{$e->getMessage()}"]);
-  exit();
-}
+// try {
+//   $pdo = new PDO($dbn, $user, $pwd);
+// } catch (PDOException $e) {
+//   echo json_encode(["db error" => "{$e->getMessage()}"]);
+//   exit();
+// }
 
 
 // SQL作成&実行
 
-$sql = 'SELECT * FROM profile';
+$sql = 'SELECT * FROM profile ORDER BY date ASC';
+
 $stmt = $pdo->prepare($sql);
 
 try {
